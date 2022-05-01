@@ -3,7 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from "../../firebase.init";
-import "./Login.css"
+import "./Login.css";
 
 const Login = () => {
     const [
@@ -34,8 +34,8 @@ const Login = () => {
         <div className='pt-3'>
             <h1 style={{ color: 'teal', fontFamily: 'sans-serif', textAlign: 'center' }}>Please LogIn</h1>
             <div className='container'>
-                <div>
-                    <Form className='container p-3 login-form' onSubmit={handleSignIn}>
+                <div className='login-form mx-auto'>
+                    <Form className='container p-3' onSubmit={handleSignIn}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" name="email" placeholder="Enter email" required />

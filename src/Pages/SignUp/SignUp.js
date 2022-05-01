@@ -38,27 +38,29 @@ const SignUp = () => {
         <div>
             <h1 style={{ color: 'teal', fontFamily: 'sans-serif', textAlign: 'center' }}>Please SignUp</h1>
             <div className='container'>
-                <Form className='container p-3 login-form' onSubmit={handleSignUp}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" name="email" placeholder="Enter email" required />
-                        <Form.Text className="text-muted">
-                            We'll never share your email with anyone else.
-                        </Form.Text>
-                    </Form.Group>
+                <div className="login-form mx-auto">
+                    <Form className='container p-3' onSubmit={handleSignUp}>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control type="email" name="email" placeholder="Enter email" required />
+                            <Form.Text className="text-muted">
+                                We'll never share your email with anyone else.
+                            </Form.Text>
+                        </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" name="password" placeholder="Password" required />
-                    </Form.Group>
-                    <Form.Group className="mb-3 ps-3" controlId="formBasicCheckbox">
-                        <Form.Check onClick={() => setAgree(!agree)} type="checkbox" className={`ps-2 ${agree ? 'text-success' : 'text-danger'}`} label="Agree with Hiking House Terms and Conditions " />
-                    </Form.Group>
-                    <p>Already have an account?<Button variant="link" onClick={() => navigate("/login")}>Please LogIn</Button></p>
-                    <Button disabled={!agree} variant="primary" type="submit">
-                        SignUp
-                    </Button>
-                </Form>
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" name="password" placeholder="Password" required />
+                        </Form.Group>
+                        <Form.Group className="mb-3 ps-3" controlId="formBasicCheckbox">
+                            <Form.Check onClick={() => setAgree(!agree)} type="checkbox" className={`ps-2 ${agree ? 'text-success' : 'text-danger'}`} label="Agree with Hiking House Terms and Conditions " />
+                        </Form.Group>
+                        <p>Already have an account?<Button variant="link" onClick={() => navigate("/login")}>Please LogIn</Button></p>
+                        <Button disabled={!agree} variant="primary" type="submit">
+                            SignUp
+                        </Button>
+                    </Form>
+                </div>
             </div>
         </div>
     );

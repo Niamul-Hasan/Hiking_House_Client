@@ -1,5 +1,4 @@
 .login-form{
-    width: 50%;
     border-radius: 20px;
     box-shadow: -4px 4px 5px 5px rgba(0,0,0,0.2);
 }
@@ -7,6 +6,12 @@
     .login-form{
         width:auto;
         background-color: antiquewhite;
+    }
+    
+}
+@media only screen and (min-device-width: 481px){
+    .login-form{
+        width:50%;
     }
     
 }

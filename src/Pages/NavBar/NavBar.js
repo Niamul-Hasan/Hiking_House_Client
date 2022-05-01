@@ -1,8 +1,17 @@
+import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.init';
+import { FaRegUserCircle } from 'react-icons/fa';
 
 const NavBar = () => {
+
+    const [user] = useAuthState(auth);
+    if (user) {
+        console.log(user)
+    }
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" sticky="top" variant="dark">
             <Container>
@@ -22,9 +31,12 @@ const NavBar = () => {
                     </Nav>
                     <Nav>
                         <Nav.Link href="#deets">More deets</Nav.Link>
-                        <Nav.Link as={Link} to="login">
-                            Login
+                        {user ? <Nav.Link onClick={() => signOut(auth)}>
+                            <FaRegUserCircle /><span className='text-success ps-2'>{user.email}</span>  SignOut
                         </Nav.Link>
+                            : <Nav.Link as={Link} to="login">
+                                Login
+                            </Nav.Link>}
                     </Nav>
                 </Navbar.Collapse>
             </Container>
