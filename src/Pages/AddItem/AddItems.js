@@ -5,6 +5,26 @@ const AddItems = () => {
 
     const handleAddItem = (event) => {
         event.preventDefault();
+        const name = event.target.name.value;
+        const img = event.target.img.value;
+        const description = event.target.description.value;
+        const price = event.target.price.value;
+        const quantity = event.target.quantity.value;
+        const newInventory = { name, img, description, price, quantity };
+        console.log(newInventory);
+
+        const url = "http://localhost:4000/gears";
+        fetch(url, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(newInventory)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
 
     }
 
@@ -28,7 +48,7 @@ const AddItems = () => {
                         </Form.Group>
                         <Form.Group className="mb-2" controlId="formBasicNumber">
                             <Form.Label>Price</Form.Label>
-                            <Form.Control type="Number" name="quantity" required />
+                            <Form.Control type="Number" name="price" required />
                         </Form.Group>
                         <Form.Group className="mb-2" controlId="formBasicNumber">
                             <Form.Label>Quantity</Form.Label>
