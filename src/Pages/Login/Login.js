@@ -3,6 +3,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from "../../firebase.init";
+import Loading from '../Loading/Loading';
 import "./Login.css";
 
 const Login = () => {
@@ -30,6 +31,13 @@ const Login = () => {
     if (user) {
         navigate('/');
     }
+    if (loading) {
+        return <Loading></Loading>
+    }
+    let errorElement;
+    if (error) {
+        errorElement = error.message;
+    }
     return (
         <div className='pt-3'>
             <h1 style={{ color: 'teal', fontFamily: 'sans-serif', textAlign: 'center' }}>Please LogIn</h1>
@@ -45,6 +53,7 @@ const Login = () => {
                             <Form.Label>Password</Form.Label>
                             <Form.Control type="password" name="password" placeholder="Password" required />
                         </Form.Group>
+                        <h3 className='text-danger'>{errorElement}</h3>
                         <p>New in Hiking House?<Button variant="link" onClick={() => navigate("/signup")}>Please SignUp Now</Button></p>
                         <Button variant="primary" type="submit">
                             Login

@@ -4,6 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import Loading from '../Loading/Loading';
 
 
 
@@ -33,6 +34,13 @@ const SignUp = () => {
     if (user) {
         navigate('/');
     }
+    if (loading) {
+        return <Loading></Loading>
+    }
+    let errorElement;
+    if (error) {
+        errorElement = error.message;
+    }
 
     return (
         <div>
@@ -55,6 +63,7 @@ const SignUp = () => {
                         <Form.Group className="mb-3 ps-3" controlId="formBasicCheckbox">
                             <Form.Check onClick={() => setAgree(!agree)} type="checkbox" className={`ps-2 ${agree ? 'text-success' : 'text-danger'}`} label="Agree with Hiking House Terms and Conditions " />
                         </Form.Group>
+                        <h3 className='text-danger'>{errorElement}</h3>
                         <p>Already have an account?<Button variant="link" onClick={() => navigate("/login")}>Please LogIn</Button></p>
                         <Button disabled={!agree} variant="primary" type="submit">
                             SignUp
