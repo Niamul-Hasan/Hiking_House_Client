@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form, FormControl, InputGroup } from 'react-bootstrap';
+import { Button, Form, FormControl } from 'react-bootstrap';
 
 const AddItems = () => {
 
