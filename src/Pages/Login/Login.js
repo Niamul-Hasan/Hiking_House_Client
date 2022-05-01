@@ -34,21 +34,23 @@ const Login = () => {
         <div className='pt-3'>
             <h1 style={{ color: 'teal', fontFamily: 'sans-serif', textAlign: 'center' }}>Please LogIn</h1>
             <div className='container'>
-                <Form className='container p-3 login-form' onSubmit={handleSignIn}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" name="email" placeholder="Enter email" required />
-                    </Form.Group>
+                <div>
+                    <Form className='container p-3 login-form' onSubmit={handleSignIn}>
+                        <Form.Group className="mb-3" controlId="formBasicEmail">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control type="email" name="email" placeholder="Enter email" required />
+                        </Form.Group>
 
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" name="password" placeholder="Password" required />
-                    </Form.Group>
-                    <p>New in Hiking House?<Button variant="link" onClick={() => navigate("/signup")}>Please SignUp Now</Button></p>
-                    <Button variant="primary" type="submit">
-                        Login
-                    </Button>
-                </Form>
+                        <Form.Group className="mb-3" controlId="formBasicPassword">
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" name="password" placeholder="Password" required />
+                        </Form.Group>
+                        <p>New in Hiking House?<Button variant="link" onClick={() => navigate("/signup")}>Please SignUp Now</Button></p>
+                        <Button variant="primary" type="submit">
+                            Login
+                        </Button>
+                    </Form>
+                </div>
             </div>
         </div>
     );
