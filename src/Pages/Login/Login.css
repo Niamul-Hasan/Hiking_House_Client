@@ -1,0 +1,12 @@
+.login-form{
+    width: 50%;
+    border-radius: 20px;
+    box-shadow: -4px 4px 5px 5px rgba(0,0,0,0.2);
+}
+@media only screen and (max-device-width: 480px){
+    .login-form{
+        width:auto;
+        background-color: antiquewhite;
+    }
+    
+}
