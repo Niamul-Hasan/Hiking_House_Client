@@ -30,7 +30,7 @@ const NavBar = () => {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
+                        {user && <Nav.Link as={Link} to="add">AddItem</Nav.Link>}
                         {user ? <Nav.Link onClick={() => signOut(auth)}>
                             <FaRegUserCircle /><span className='text-success ps-2'>{user.email}</span>  SignOut
                         </Nav.Link>
