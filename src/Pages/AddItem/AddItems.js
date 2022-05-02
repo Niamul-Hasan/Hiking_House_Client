@@ -24,7 +24,8 @@ const AddItems = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-            })
+            });
+        event.target.reset();
 
     }
 

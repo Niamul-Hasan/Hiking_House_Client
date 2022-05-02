@@ -1,11 +1,12 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
-import slide1 from "../../images/Banner.png";
-import slide2 from "../../images/banner3.png";
+import slide1 from "../../images/newbanner01.png";
+import slide2 from "../../images/newbanner02.png";
+import slide3 from "../../images/newbanner03.png";
 
 const Banner = () => {
     return (
-        <div>
+        <div >
             <Carousel>
                 <Carousel.Item interval={1000}>
                     <img
@@ -34,7 +35,7 @@ const Banner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src={slide1}
+                        src={slide3}
                         alt="Third slide"
                         style={{ height: '500px' }}
                     />
