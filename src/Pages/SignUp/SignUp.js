@@ -44,10 +44,10 @@ const SignUp = () => {
     }
 
     return (
-        <div>
+        <div className='my-3'>
             <h1 style={{ color: 'teal', fontFamily: 'sans-serif', textAlign: 'center' }}>Please SignUp</h1>
             <div className='container'>
-                <div className="login-form mx-auto">
+                <div className="login-form mx-auto pb-3">
                     <Form className='container p-3' onSubmit={handleSignUp}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>

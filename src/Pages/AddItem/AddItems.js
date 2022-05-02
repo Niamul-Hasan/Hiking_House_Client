@@ -30,11 +30,11 @@ const AddItems = () => {
     }
 
     return (
-        <div className='pt-3'>
+        <div className='pt-3 my-3'>
             <h1 style={{ color: 'tomato', fontFamily: 'sans-serif', textAlign: 'center' }}>You Can Add Gear Item Here</h1>
             <div className='container'>
                 <div className='login-form mx-auto'>
-                    <Form className='container p-2' onSubmit={handleAddItem}>
+                    <Form className='container p-3' onSubmit={handleAddItem}>
                         <Form.Group className="mb-2" controlId="formBasicText">
                             <Form.Label>Inventory Name</Form.Label>
                             <Form.Control type="text" name="name" required />

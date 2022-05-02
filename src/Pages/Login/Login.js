@@ -40,7 +40,7 @@ const Login = () => {
         errorElement = error.message;
     }
     return (
-        <div className='pt-3'>
+        <div className='pt-3 mb-3'>
             <h1 style={{ color: 'teal', fontFamily: 'sans-serif', textAlign: 'center' }}>Please LogIn</h1>
             <div className='container'>
                 <div className='login-form mx-auto pb-4'>

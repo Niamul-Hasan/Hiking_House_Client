@@ -31,8 +31,10 @@ const NavBar = () => {
                     </Nav>
                     <Nav>
                         {user && <Nav.Link as={Link} to="add">AddItem</Nav.Link>}
+                        {user && <Nav.Link><FaRegUserCircle /><span className='text-success ps-2'>{user.email}
+                        </span></Nav.Link>}
                         {user ? <Nav.Link onClick={() => signOut(auth)}>
-                            <FaRegUserCircle /><span className='text-success ps-2'>{user.email}</span>  SignOut
+                            SignOut
                         </Nav.Link>
                             : <Nav.Link as={Link} to="login">
                                 Login
