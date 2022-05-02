@@ -1,6 +1,6 @@
 .footer {
 	width: 100%;
-	background: #009db8;
+	background: #555c5e;
 	display: block;
  }
 
@@ -15,7 +15,7 @@
  }
 
 .footer-items {
-	width: 80%;
+	width: 90%;
 	padding: 10px 20px;
 	box-sizing: border-box;
 	color: #fff;
@@ -34,10 +34,10 @@
 
 .border1 {
 	height: 3px;
-	width: 40px;
-	background: #ff9800;
-	color: #ff9800;
-	background-color: #ff9800;
+	width: 60%;
+	background: #183a2f;
+	color: #183a2f;
+	background-color: #183a2f;
 	border: 0px;
 }
 
@@ -56,7 +56,7 @@ ul a {
 }
 
 ul a:hover {
-	color: #ff9800;
+	color: #183a2f;
 }
 
 ul li {
@@ -89,11 +89,11 @@ ul li {
 
 .footer-bottom {
 	padding: 10px;
-	background: #009db8;
+	background: #323435;
 	color: #fff;
-	font-size: 18px;
+	font-size: 12px;
 	text-align: center;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: cursive;
 }
 
 

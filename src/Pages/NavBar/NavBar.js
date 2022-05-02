@@ -1,5 +1,5 @@
-import { signOut } from 'firebase/auth';
 import React from 'react';
+import { signOut } from 'firebase/auth';
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
@@ -34,7 +34,7 @@ const NavBar = () => {
                         {user && <Nav.Link><FaRegUserCircle /><span className='text-success ps-2'>{user.email}
                         </span></Nav.Link>}
                         {user ? <Nav.Link onClick={() => signOut(auth)}>
-                            SignOut
+                            <span style={{ color: 'maroon', fontWeight: 'bolder' }}>SignOut</span>
                         </Nav.Link>
                             : <Nav.Link as={Link} to="login">
                                 Login

@@ -3,8 +3,8 @@ import { Button, Spinner } from 'react-bootstrap';
 
 const Loading = () => {
     return (
-        <div className='text-center m-auto'>
-            <Button variant="primary" disabled>
+        <div className='text-center mt-3 '>
+            <Button variant="success" disabled>
                 <Spinner
                     as="span"
                     animation="grow"

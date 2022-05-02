@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from "../../firebase.init";
 import Loading from '../Loading/Loading';
 import "./Login.css";
@@ -27,18 +27,20 @@ const Login = () => {
     }
 
     const navigate = useNavigate();
-
-
-    if (user) {
-        navigate('/');
-    }
-    if (loading) {
-        return <Loading></Loading>
-    }
     let errorElement;
     if (error) {
         errorElement = error.message;
     }
+
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    if (loading) {
+        return <Loading></Loading>;
+    }
+    if (user) {
+        navigate(from, { replace: true });
+    }
+
     return (
         <div className='pt-3 mb-3'>
             <h1 style={{ color: 'teal', fontFamily: 'sans-serif', textAlign: 'center' }}>Please LogIn</h1>

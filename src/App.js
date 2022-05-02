@@ -5,6 +5,7 @@ import Gears from './Pages/Home/Gears/Gears';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import NavBar from './Pages/NavBar/NavBar';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import SignUp from './Pages/SignUp/SignUp';
 function App() {
   return (
@@ -14,8 +15,10 @@ function App() {
         <Route path='/' element={<Home />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
-        <Route path="/add" element={<AddItems />}></Route>
-        <Route path="/gears" element={<Gears />}></Route>
+        <Route path="/add" element={<PrivateRoute>
+          <AddItems />
+        </PrivateRoute>}></Route>
+        <Route path="/inventories" element={<Gears />}></Route>
       </Routes>
       <HikingFooter></HikingFooter>
     </div>

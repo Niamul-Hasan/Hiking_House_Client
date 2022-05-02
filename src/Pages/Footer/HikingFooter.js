@@ -12,7 +12,7 @@ const HikingFooter = () => {
 
                 {/* for company name and description */}
                 <div className="footer-items">
-                    <h1 className='text-warning'>HIKING HOUSE</h1>
+                    <h1 style={{ color: '#183a2f' }}>HIKING HOUSE</h1>
                     <p>Gear up your hiking business</p>
                     <p>Be a partner of Hiking House.</p>
                 </div>
@@ -37,8 +37,8 @@ const HikingFooter = () => {
                     <div className="border1"></div>
                     <ul>
                         <li><MdLocationPin /> Dhaka,Bangladesh</li>
-                        <li><FaPhoneAlt /> 123456789</li>
-                        <li><MdMail /> zead@gmail.com</li>
+                        <li><FaPhoneAlt /> 12301946760326123</li>
+                        <li><MdMail /> zead.fornet@gmail.com</li>
                     </ul>
 
 
