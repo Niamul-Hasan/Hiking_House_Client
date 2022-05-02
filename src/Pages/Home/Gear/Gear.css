@@ -1,0 +1,6 @@
+.cart-img{
+    transition: transform 1s;
+}
+.cart-img:hover{
+    transform:scale(0.8);
+}

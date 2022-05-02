@@ -1,16 +1,24 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { FaArrowRight } from 'react-icons/fa';
+import './Gear.css';
 
 
 const Gear = ({ inventory }) => {
 
     const { _id, description, name, img, price, quantity } = inventory;
+
+
     return (
         <div>
-            <Col>
+            <Col style={{ borderRadius: '20px', boxShadow: "-2px 2px 4px 4px rgba(0,0,0,0.1)" }}>
                 <Card style={{ height: '550px', position: 'relative' }}>
-                    <Card.Img variant="top" className='img-fluid w-50  mx-auto pt-2' src={img} />
+                    <Card.Img variant="top" className='img-fluid w-50  mx-auto pt-2 mt-2 cart-img' src={img}
+                        style={{
+                            borderRadius: '20px',
+                            boxShadow: "-2px 2px 4px 4px rgba(0,0,0,0.2)",
+                        }}
+                    />
                     <Card.Body className='text-center'>
                         <Card.Title style={{ color: "teal", fontSize: '24px' }}>{name}</Card.Title>
                         <Card.Text>{description}</Card.Text>
