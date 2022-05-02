@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import auth from "../../firebase.init";
 import Loading from '../Loading/Loading';
 import "./Login.css";
+import SocialLogin from './SocialLogin/SocialLogin';
 
 const Login = () => {
     const [
@@ -42,7 +43,7 @@ const Login = () => {
         <div className='pt-3'>
             <h1 style={{ color: 'teal', fontFamily: 'sans-serif', textAlign: 'center' }}>Please LogIn</h1>
             <div className='container'>
-                <div className='login-form mx-auto'>
+                <div className='login-form mx-auto pb-4'>
                     <Form className='container p-3' onSubmit={handleSignIn}>
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
@@ -59,6 +60,7 @@ const Login = () => {
                             Login
                         </Button>
                     </Form>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>

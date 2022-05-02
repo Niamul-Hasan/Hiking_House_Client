@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
+import SocialLogin from '../Login/SocialLogin/SocialLogin';
 
 
 
@@ -69,6 +70,7 @@ const SignUp = () => {
                             SignUp
                         </Button>
                     </Form>
+                    <SocialLogin></SocialLogin>
                 </div>
             </div>
         </div>

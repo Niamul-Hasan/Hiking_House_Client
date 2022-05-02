@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
 import AddItems from './Pages/AddItem/AddItems';
+import HikingFooter from './Pages/Footer/HikingFooter';
 import Gears from './Pages/Home/Gears/Gears';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
@@ -16,7 +17,7 @@ function App() {
         <Route path="/add" element={<AddItems />}></Route>
         <Route path="/gears" element={<Gears />}></Route>
       </Routes>
-
+      <HikingFooter></HikingFooter>
     </div>
   );
 }
