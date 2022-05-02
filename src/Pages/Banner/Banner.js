@@ -8,7 +8,7 @@ const Banner = () => {
     return (
         <div >
             <Carousel>
-                <Carousel.Item interval={1000}>
+                <Carousel.Item interval={1500}>
                     <img
                         className="d-block w-100"
                         src={slide1}
@@ -20,16 +20,16 @@ const Banner = () => {
                         <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={500}>
+                <Carousel.Item interval={1500}>
                     <img
                         className="d-block w-100"
                         src={slide2}
                         alt="Second slide"
                         style={{ height: '500px' }}
                     />
-                    <Carousel.Caption>
+                    <Carousel.Caption className="pb-5 mb-5 text-primary">
                         <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <p className='fs-3'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque quam rerum consequatur quisquam officia rem similique quia quasi maxime inventore omnis repellendus doloremque ipsa, necessitatibus at! Officiis quo dolorum aperiam consequatur laudantium. Assumenda in veniam quos consectetur sint sit eos.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
