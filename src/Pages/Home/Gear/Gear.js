@@ -1,12 +1,18 @@
 import React from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { FaArrowRight } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 import './Gear.css';
 
 
 const Gear = ({ inventory }) => {
 
     const { _id, description, name, img, price, quantity } = inventory;
+    const navigate = useNavigate();
+
+    const handleUpdate = (id) => {
+        navigate(`/inventory/${id}`);
+    }
 
 
     return (
@@ -25,7 +31,7 @@ const Gear = ({ inventory }) => {
                         <Card.Text> <span className='fs-4' style={{ color: 'tomato' }}>Price: $ {price}</span> </Card.Text>
                         <Card.Text> <span className='fs-5 text-success'>Quantity: {quantity}</span> </Card.Text>
                         <div style={{ position: 'absolute', bottom: '10px', left: '100px' }}>
-                            <Button>Explore Inventory <FaArrowRight /></Button>
+                            <Button onClick={() => handleUpdate(_id)}>Update Inventory <FaArrowRight /></Button>
                         </div>
                     </Card.Body>
                 </Card>

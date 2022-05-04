@@ -3,6 +3,7 @@ import AddItems from './Pages/AddItem/AddItems';
 import HikingFooter from './Pages/Footer/HikingFooter';
 import Gears from './Pages/Home/Gears/Gears';
 import Home from './Pages/Home/Home';
+import InventoryDetails from './Pages/InventoryDetails/InventoryDetails';
 import Login from './Pages/Login/Login';
 import NavBar from './Pages/NavBar/NavBar';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
@@ -18,7 +19,10 @@ function App() {
         <Route path="/add" element={<PrivateRoute>
           <AddItems />
         </PrivateRoute>}></Route>
-        <Route path="/inventories" element={<Gears />}></Route>
+        <Route path="/inventory/:id" element={<PrivateRoute>
+          <InventoryDetails />
+        </PrivateRoute>}></Route>
+        <Route path="/inventory" element={<Gears />}></Route>
       </Routes>
       <HikingFooter></HikingFooter>
     </div>

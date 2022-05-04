@@ -1,0 +1,45 @@
+import React from 'react';
+import { useEffect } from 'react';
+import { useState } from 'react';
+import { Button } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import './InventoryDetails.css'
+
+const InventoryDetails = () => {
+    const { id } = useParams();
+
+    const [inventory, setInventory] = useState({});
+    useEffect(() => {
+        const url = `http://localhost:4000/inventories/${id}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setInventory(data))
+
+    }, [])
+
+    return (
+        <div className='container inventory-details my-5'>
+            <div className='container  text-center' >
+                <img src={inventory.img} alt="" className='py-3' style={{ borderRadius: '20px', boxShadow: '-2px 2px 4px 4px rgba(0,0,0,0.2) ' }} />
+            </div>
+            <div className='container'>
+                <h2>{inventory.name}</h2>
+                <p>{inventory.description}</p>
+                <h3>Price: ${inventory.price}</h3>
+                <h4>Remaining Quantity: {inventory.quantity}</h4>
+                <Button>Deliver</Button>
+            </div>
+            <div>
+                <form className='p-2 bg-info'>
+                    <input type="text" name="suplier" id="" placeholder='suplier Name' required className='w-100 mb-2' />
+                    <input type="number" name="quantity" id="" placeholder='Restoke Inventory' required className='w-100 mb-2' />
+
+                    <input type="submit" value="Update" className='d-block bg-warning border-0 rounded' />
+                </form>
+            </div>
+
+        </div>
+    );
+};
+
+export default InventoryDetails;
