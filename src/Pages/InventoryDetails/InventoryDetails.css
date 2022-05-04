@@ -1,5 +1,14 @@
-.inventory-details{
+.inventory-details {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
+}
+
+/* for mobile responsive */
+@media screen and (max-width:480px) {
+    .inventory-details {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 15px;
+    }
 }

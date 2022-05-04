@@ -77,7 +77,7 @@ const InventoryDetails = () => {
             </div>
             <div>
                 <form className='p-2 bg-info' onSubmit={handleUpdate}>
-                    <input type="text" name="suplier" id="" placeholder='suplier Name' required className='w-100 mb-2' />
+                    <input type="text" name="suplier" id="" placeholder='suplier Name' className='w-100 mb-2' />
                     <input type="number" name="quantity" id="" placeholder='Restoke Inventory' required className='w-100 mb-2' />
 
                     <input type="submit" value="Update" className='d-block bg-warning border-0 rounded' />
