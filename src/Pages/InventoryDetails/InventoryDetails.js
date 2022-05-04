@@ -15,7 +15,49 @@ const InventoryDetails = () => {
             .then(res => res.json())
             .then(data => setInventory(data))
 
-    }, [])
+    }, [id, inventory])
+
+    let count = parseInt(inventory.quantity);
+    // console.log(count);
+
+    const handleDeliver = () => {
+        count = count - 1;
+        inventory.quantity = count;
+        fetch(`http://localhost:4000/inventories/${id}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(inventory)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            });
+
+    }
+
+    const handleUpdate = event => {
+        event.preventDefault();
+        const suplier = event.target.suplier.value;
+        const restoke = event.target.quantity.value;
+        const quantity = parseInt(restoke) + count;
+        const update = { suplier, quantity };
+
+        fetch(`http://localhost:4000/inventories/${id}`, {
+            method: "PUT",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(update)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            });
+
+    }
+    // console.log(inventory.quantity);
 
     return (
         <div className='container inventory-details my-5'>
@@ -26,11 +68,11 @@ const InventoryDetails = () => {
                 <h2>{inventory.name}</h2>
                 <p>{inventory.description}</p>
                 <h3>Price: ${inventory.price}</h3>
-                <h4>Remaining Quantity: {inventory.quantity}</h4>
-                <Button>Deliver</Button>
+                <h4>Remaining Quantity: {count}</h4>
+                <Button onClick={handleDeliver}>Deliver</Button>
             </div>
             <div>
-                <form className='p-2 bg-info'>
+                <form className='p-2 bg-info' onSubmit={handleUpdate}>
                     <input type="text" name="suplier" id="" placeholder='suplier Name' required className='w-100 mb-2' />
                     <input type="number" name="quantity" id="" placeholder='Restoke Inventory' required className='w-100 mb-2' />
 
