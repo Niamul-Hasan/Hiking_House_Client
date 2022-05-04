@@ -19,12 +19,11 @@ const InventoryDetails = () => {
     }, [id, decrement])
 
     let count = parseInt(inventory.quantity);
-    // console.log(count);
 
     const handleDeliver = () => {
         count = count - 1;
         inventory.quantity = count;
-        console.log(count);
+
         fetch(`http://localhost:4000/inventories/${id}`, {
             method: "PUT",
             headers: {
@@ -61,7 +60,6 @@ const InventoryDetails = () => {
             });
 
     }
-    // console.log(inventory.quantity);
 
     return (
         <div className='container inventory-details my-5'>
