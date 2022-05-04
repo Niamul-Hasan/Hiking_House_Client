@@ -9,13 +9,14 @@ const InventoryDetails = () => {
     const { id } = useParams();
 
     const [inventory, setInventory] = useState({});
+    const [decrement, setDecrement] = useState(0);
     useEffect(() => {
         const url = `http://localhost:4000/inventories/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data))
 
-    }, [id, inventory])
+    }, [id, decrement])
 
     let count = parseInt(inventory.quantity);
     // console.log(count);
@@ -23,6 +24,7 @@ const InventoryDetails = () => {
     const handleDeliver = () => {
         count = count - 1;
         inventory.quantity = count;
+        console.log(count);
         fetch(`http://localhost:4000/inventories/${id}`, {
             method: "PUT",
             headers: {
@@ -32,6 +34,7 @@ const InventoryDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
+                setDecrement(decrement + 1);
                 console.log(data)
             });
 
@@ -53,6 +56,7 @@ const InventoryDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
+                setDecrement(decrement + 1);
                 console.log(data)
             });
 
