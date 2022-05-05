@@ -2,8 +2,10 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
-import './InventoryDetails.css'
+import { useParams, Link } from 'react-router-dom';
+import './InventoryDetails.css';
+import { RiListSettingsLine } from "react-icons/ri";
+import { FaArrowRight } from "react-icons/fa";
 
 const InventoryDetails = () => {
     const { id } = useParams();
@@ -80,6 +82,10 @@ const InventoryDetails = () => {
 
                     <input type="submit" value="Update" className='d-block bg-warning border-0 rounded' />
                 </form>
+                <Button variant="link" as={Link} to='/manageIn' className='text-decoration-none fs-5 mb-4 '
+                    style={{ color: 'teal' }}
+                >
+                    <RiListSettingsLine />  Manage Inventorty <FaArrowRight /></Button>
             </div>
 
         </div>

@@ -5,6 +5,7 @@ import Gears from './Pages/Home/Gears/Gears';
 import Home from './Pages/Home/Home';
 import InventoryDetails from './Pages/InventoryDetails/InventoryDetails';
 import Login from './Pages/Login/Login';
+import ManageInventory from './Pages/ManageInventory/ManageInventory';
 import NavBar from './Pages/NavBar/NavBar';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import SignUp from './Pages/SignUp/SignUp';
@@ -22,6 +23,8 @@ function App() {
         <Route path="/inventory/:id" element={<PrivateRoute>
           <InventoryDetails />
         </PrivateRoute>}></Route>
+        <Route path='/manageIn' element={<PrivateRoute>
+          <ManageInventory /></PrivateRoute>}></Route>
         <Route path="/inventory" element={<Gears />}></Route>
       </Routes>
       <HikingFooter></HikingFooter>

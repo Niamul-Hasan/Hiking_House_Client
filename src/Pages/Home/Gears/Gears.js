@@ -1,9 +1,11 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { Row } from 'react-bootstrap';
+import { Button, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import Gear from '../Gear/Gear';
-
+import { RiListSettingsLine } from "react-icons/ri";
+import { FaArrowRight } from "react-icons/fa";
 const Gears = () => {
     const [inventories, setInventories] = useState([]);
 
@@ -26,6 +28,10 @@ const Gears = () => {
                     ></Gear>)
                 }
             </Row>
+            <Button variant="link" as={Link} to='manageIn' className='text-decoration-none fs-5 mb-4 '
+                style={{ color: 'teal' }}
+            >
+                <RiListSettingsLine />  Manage Inventorty <FaArrowRight /></Button>
         </div>
 
 
