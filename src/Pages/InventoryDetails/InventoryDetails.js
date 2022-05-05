@@ -9,22 +9,32 @@ import { FaArrowRight } from "react-icons/fa";
 
 const InventoryDetails = () => {
     const { id } = useParams();
-
+    const [btnText, setBtnText] = useState('Delivered');
+    const [btnColor, setBtnColor] = useState('forestgreen');
     const [inventory, setInventory] = useState({});
-    const [decrement, setDecrement] = useState(0);
+    const [loadData, setLoadData] = useState(0);
     useEffect(() => {
         const url = `http://localhost:4000/inventories/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data))
 
-    }, [id, decrement])
+    }, [id, loadData])
 
     let count = parseInt(inventory.quantity);
 
     const handleDeliver = () => {
-        count = count - 1;
-        inventory.quantity = count;
+        if (count > 0) {
+            count = count - 1;
+            inventory.quantity = count;
+            setBtnText('Delivered');
+            setBtnColor('forestgreen')
+        }
+        if (count <= 0) {
+            setBtnText('StokeOver');
+            setBtnColor('red')
+        }
+
 
         fetch(`http://localhost:4000/inventories/${id}`, {
             method: "PUT",
@@ -35,9 +45,12 @@ const InventoryDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                setDecrement(decrement + 1);
+                setLoadData(loadData + 1);
+
                 console.log(data)
             });
+
+
 
     }
 
@@ -48,6 +61,7 @@ const InventoryDetails = () => {
         const quantity = parseInt(restoke) + count;
         const update = { suplier, quantity };
 
+
         fetch(`http://localhost:4000/inventories/${id}`, {
             method: "PUT",
             headers: {
@@ -57,9 +71,10 @@ const InventoryDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                setDecrement(decrement + 1);
+                setLoadData(loadData + 1);
                 console.log(data)
             });
+
 
     }
 
@@ -73,11 +88,13 @@ const InventoryDetails = () => {
                 <p>{inventory.description}</p>
                 <h3>Price: ${inventory.price}</h3>
                 <h4>Remaining Quantity: {count}</h4>
-                <Button onClick={handleDeliver}>Deliver</Button>
+                <Button onClick={handleDeliver} style={{ backgroundColor: `${btnColor}`, border: 'none' }}
+                ><span >{btnText}</span>
+                </Button>
             </div>
             <div>
                 <form className='p-2 bg-info' onSubmit={handleUpdate}>
-                    <input type="text" name="suplier" id="" placeholder='suplier Name' className='w-100 mb-2' />
+                    <input type="text" name="suplier" id="" placeholder='suplier Name' className='w-100 mb-2' required />
                     <input type="number" name="quantity" id="" placeholder='Restoke Inventory' required className='w-100 mb-2' />
 
                     <input type="submit" value="Update" className='d-block bg-warning border-0 rounded' />

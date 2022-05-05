@@ -1,10 +1,22 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Card, Col } from 'react-bootstrap';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { BiSelectMultiple } from 'react-icons/bi';
 
 const HikingItem = ({ hikingItem }) => {
     const { _id, name, description, price, quantity, img } = hikingItem;
+
+    const [inventories, setInventories] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:4000/inventories')
+            .then(res => res.json())
+            .then(data => setInventories(data))
+    }, [])
+
+
+
+
     return (
         <div>
             <Col style={{ borderRadius: '20px', boxShadow: "-2px 2px 4px 4px rgba(0,0,0,0.1)" }}>
