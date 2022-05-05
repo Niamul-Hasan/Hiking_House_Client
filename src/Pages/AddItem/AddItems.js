@@ -10,7 +10,8 @@ const AddItems = () => {
         const description = event.target.description.value;
         const price = event.target.price.value;
         const quantity = event.target.quantity.value;
-        const newInventory = { name, img, description, price, quantity };
+        const suplier = event.target.suplier.value;
+        const newInventory = { name, img, description, price, quantity, suplier };
         console.log(newInventory);
 
         const url = "http://localhost:4000/gears";
@@ -31,13 +32,17 @@ const AddItems = () => {
 
     return (
         <div className='pt-3 my-3'>
-            <h1 style={{ color: 'tomato', fontFamily: 'sans-serif', textAlign: 'center' }}>You Can Add Gear Item Here</h1>
+            <h1 style={{ color: 'tomato', fontFamily: 'sans-serif', textAlign: 'center' }}>You Can Add Inventory Here</h1>
             <div className='container'>
                 <div className='login-form mx-auto'>
                     <Form className='container p-3' onSubmit={handleAddItem}>
                         <Form.Group className="mb-2" controlId="formBasicText">
                             <Form.Label>Inventory Name</Form.Label>
                             <Form.Control type="text" name="name" required />
+                        </Form.Group>
+                        <Form.Group className="mb-2" controlId="formBasicText">
+                            <Form.Label>Suplier Name</Form.Label>
+                            <Form.Control type="text" name="suplier" required />
                         </Form.Group>
                         <Form.Group className="mb-2" controlId="formBasicText">
                             <Form.Label>Image Url</Form.Label>

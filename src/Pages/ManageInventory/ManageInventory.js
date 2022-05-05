@@ -16,20 +16,24 @@ const ManageInventory = () => {
     }, [])
 
     const handleDelete = (id) => {
-        const url = `http://localhost:4000/inventories/${id}`;
-        fetch(url, {
-            method: 'DELETE',
-            headers: {
-                'content-type': "application/json"
-            },
-            body: JSON.stringify(inventories)
-        })
-            .then(res => res.json())
-            .then(remaingData => {
-                const remaining = inventories.filter(inventory => inventory._id !== id);
-                setInventories(remaining);
-                console.log(remaingData);
+        const confirm = window.confirm('Are You Sure to Delete This item');
+        if (confirm) {
+            const url = `http://localhost:4000/inventories/${id}`;
+            fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'content-type': "application/json"
+                },
+                body: JSON.stringify(inventories)
             })
+                .then(res => res.json())
+                .then(remaingData => {
+                    const remaining = inventories.filter(inventory => inventory._id !== id);
+                    setInventories(remaining);
+                    console.log(remaingData);
+                })
+        }
+
 
     }
     return (
