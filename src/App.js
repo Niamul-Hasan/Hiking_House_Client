@@ -1,4 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import AddItems from './Pages/AddItem/AddItems';
 import HikingFooter from './Pages/Footer/HikingFooter';
 import Gears from './Pages/Home/Gears/Gears';
@@ -6,6 +7,7 @@ import Home from './Pages/Home/Home';
 import InventoryDetails from './Pages/InventoryDetails/InventoryDetails';
 import Login from './Pages/Login/Login';
 import ManageInventory from './Pages/ManageInventory/ManageInventory';
+import MyInventory from './Pages/MyInventory/MyInventory';
 import NavBar from './Pages/NavBar/NavBar';
 import NotFound from './Pages/NotFound/NotFound';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
@@ -26,12 +28,13 @@ function App() {
         </PrivateRoute>}></Route>
         <Route path='/manageIn' element={<PrivateRoute>
           <ManageInventory /></PrivateRoute>}></Route>
-        <Route path='/myInventory' element={<PrivateRoute>
-          <ManageInventory /></PrivateRoute>}></Route>
+        <Route path='/myInventory/:id' element={<PrivateRoute>
+          <MyInventory /></PrivateRoute>}></Route>
         <Route path="/inventory" element={<Gears />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <HikingFooter></HikingFooter>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }

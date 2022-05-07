@@ -1,19 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import { IoBagAdd } from 'react-icons/io5';
 import { FaArrowRight } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { RiDeleteBin6Line } from 'react-icons/ri';
 import { BiSelectMultiple } from 'react-icons/bi';
+import UseAllData from '../Hooks/UseAllData';
 
 
 const ManageInventory = () => {
-    const [inventories, setInventories] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:4000/inventories')
-            .then(res => res.json())
-            .then(data => setInventories(data))
-    }, [])
+    //custom hook
+    const [inventories, setInventories] = UseAllData();
+
+    const navigate = useNavigate();
 
     const handleDelete = (id) => {
         const confirm = window.confirm('Are You Sure to Delete This item');
@@ -33,8 +32,10 @@ const ManageInventory = () => {
                     console.log(remaingData);
                 })
         }
-
-
+    }
+    //handleMyInventory arrow function
+    const handleMyInventory = (id) => {
+        navigate(`/myInventory/${id}`);
     }
     return (
         <div className='container'>
@@ -60,7 +61,7 @@ const ManageInventory = () => {
                                     className='d-flex justify-content-evenly align-items-center w-100'
                                 >
                                     <div>
-                                        <Button
+                                        <Button onClick={() => handleMyInventory(inventory._id)}
                                             style={{ backgroundColor: 'forestgreen', border: 'none' }}
                                         >My Inventory <BiSelectMultiple /></Button>
                                     </div>

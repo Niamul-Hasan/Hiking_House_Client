@@ -1,8 +1,10 @@
 import React from 'react';
 import { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import auth from '../../firebase.init';
 import Loading from '../Loading/Loading';
 import SocialLogin from '../Login/SocialLogin/SocialLogin';
@@ -18,30 +20,39 @@ const SignUp = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth);
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+    const [updateProfile, updating, updateError] = useUpdateProfile(auth)
 
 
-    const handleSignUp = (event) => {
+    const handleSignUp = async (event) => {
         event.preventDefault();
+        const name = event.target.name.value;
         const email = event.target.email.value;
         const password = event.target.password.value;
         // console.log(email, password);
-        createUserWithEmailAndPassword(email, password);
+        await createUserWithEmailAndPassword(email, password);
+        await updateProfile({ displayName: name })
         event.target.reset();
+        toast(`Account has been created for ${name}`);
     }
     const navigate = useNavigate();
 
 
     if (user) {
         navigate('/');
+
     }
-    if (loading) {
+    if (loading || updating) {
         return <Loading></Loading>
     }
     let errorElement;
     if (error) {
-        errorElement = error.message;
+        errorElement = error?.message;
     }
+    if (updateError) {
+        errorElement = updateError?.message;
+    }
+
 
     return (
         <div className='my-3'>
@@ -49,6 +60,11 @@ const SignUp = () => {
             <div className='container'>
                 <div className="login-form mx-auto pb-3">
                     <Form className='container p-3' onSubmit={handleSignUp}>
+                        <Form.Group className="mb-3" controlId="formBasicText">
+                            <Form.Label>User Name</Form.Label>
+                            <Form.Control type="text" name="name" placeholder="Enter Name" required />
+                        </Form.Group>
+
                         <Form.Group className="mb-3" controlId="formBasicEmail">
                             <Form.Label>Email address</Form.Label>
                             <Form.Control type="email" name="email" placeholder="Enter email" required />
