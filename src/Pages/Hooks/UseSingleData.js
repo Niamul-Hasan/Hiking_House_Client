@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const UseSingleData = (id) => {
     const [inventory, setInventory] = useState({});
     useEffect(() => {
-        const url = `http://localhost:4000/inventories/${id}`;
+        const url = `https://serene-coast-39945.herokuapp.com/inventories/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data))

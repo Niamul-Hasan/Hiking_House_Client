@@ -24,7 +24,7 @@ const MyInventory = () => {
             quantity: event.target.quantity.value
 
         }
-        fetch("http://localhost:4000/bookings", {
+        fetch("https://serene-coast-39945.herokuapp.com/bookings", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'

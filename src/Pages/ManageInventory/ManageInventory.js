@@ -17,7 +17,7 @@ const ManageInventory = () => {
     const handleDelete = (id) => {
         const confirm = window.confirm('Are You Sure to Delete This item');
         if (confirm) {
-            const url = `http://localhost:4000/inventories/${id}`;
+            const url = `https://serene-coast-39945.herokuapp.com/inventories/${id}`;
             fetch(url, {
                 method: 'DELETE',
                 headers: {

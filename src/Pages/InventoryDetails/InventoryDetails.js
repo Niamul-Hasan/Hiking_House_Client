@@ -14,7 +14,7 @@ const InventoryDetails = () => {
     const [inventory, setInventory] = useState({});
     const [loadData, setLoadData] = useState(0);
     useEffect(() => {
-        const url = `http://localhost:4000/inventories/${id}`;
+        const url = `https://serene-coast-39945.herokuapp.com/inventories/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setInventory(data))
@@ -36,7 +36,7 @@ const InventoryDetails = () => {
         }
 
 
-        fetch(`http://localhost:4000/inventories/${id}`, {
+        fetch(`https://serene-coast-39945.herokuapp.com/inventories/${id}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'
@@ -62,7 +62,7 @@ const InventoryDetails = () => {
         const update = { suplier, quantity };
 
 
-        fetch(`http://localhost:4000/inventories/${id}`, {
+        fetch(`https://serene-coast-39945.herokuapp.com/inventories/${id}`, {
             method: "PUT",
             headers: {
                 'Content-Type': 'application/json'

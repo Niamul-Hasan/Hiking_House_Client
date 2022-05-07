@@ -14,7 +14,7 @@ const AddItems = () => {
         const newInventory = { name, img, description, price, quantity, suplier };
         console.log(newInventory);
 
-        const url = "http://localhost:4000/gears";
+        const url = "https://serene-coast-39945.herokuapp.com/gears";
         fetch(url, {
             method: "POST",
             headers: {
