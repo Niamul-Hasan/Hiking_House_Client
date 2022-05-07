@@ -1,0 +1,16 @@
+.booking {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+    box-shadow: -2px 2px 4px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+}
+
+@media screen and (max-width:480px) {
+    .booking {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding-bottom: 10px;
+    }
+}

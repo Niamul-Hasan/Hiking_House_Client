@@ -4,3 +4,12 @@
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width:480px) {
+    .myinventory {
+        display: grid;
+        grid-template-columns: 1fr;
+        row-gap: 5px;
+    }
+
+}

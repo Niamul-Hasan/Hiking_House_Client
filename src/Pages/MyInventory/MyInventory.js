@@ -19,6 +19,7 @@ const MyInventory = () => {
             email: user.email,
             iName: inventory.name,
             suplier: inventory.suplier,
+            img: inventory.img,
             phone: event.target.phone.value,
             quantity: event.target.quantity.value
 

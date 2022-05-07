@@ -20,7 +20,7 @@ const NavBar = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link as={Link} to="/selected">Bookings</Nav.Link>
+                        <Nav.Link as={Link} to="/">Bookings</Nav.Link>
                         <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
                             <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                             <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -30,9 +30,9 @@ const NavBar = () => {
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        {user && <Nav.Link as={Link} to="manageIn">Manage Inventory</Nav.Link>}
-                        {user && <Nav.Link as={Link} to="add">Add Inventory</Nav.Link>}
-                        {user && <Nav.Link as={Link} to="myInventory/:id">My Inventory</Nav.Link>}
+                        {user && <Nav.Link as={Link} to="/manageIn">Manage</Nav.Link>}
+                        {user && <Nav.Link as={Link} to="/add">Add</Nav.Link>}
+                        {user && <Nav.Link as={Link} to="/selected">Bookings</Nav.Link>}
                         {user && <Nav.Link><FaRegUserCircle /><span className='text-success ps-2'>{user.email}
                         </span></Nav.Link>}
                         {user ? <Nav.Link onClick={() => signOut(auth)}>
