@@ -74,7 +74,9 @@ const Login = () => {
                         </Form.Group>
                         <h3 className='text-danger'>{errorElement}</h3>
                         <p>Forget Password?<Button onClick={handleResetPassword} variant="link" className="text-decoration-none text-primary">Click to Reset Password</Button></p>
-                        <p>New in Hiking House?<Button variant="link" onClick={() => navigate("/signup")}>Please SignUp Now</Button></p>
+                        <p>New in Hiking House?<Button variant="link"
+                            className="text-decoration-none text-primary"
+                            onClick={() => navigate("/signup")}>Please SignUp Now</Button></p>
                         <Button variant="primary" type="submit">
                             Login
                         </Button>

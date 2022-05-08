@@ -18,7 +18,7 @@ const Gears = () => {
 
     return (
         <div className='container'>
-            <h1 className='text-success text-center mt-3'>Available Inventories</h1>
+            <h1 className='text-center mt-3' style={{ color: 'teal' }}>HIKING INVENTORIES </h1>
             <Row xs={1} md={2} lg={3} className="g-4 my-3">
                 {
                     inventories.map(inventory => <Gear

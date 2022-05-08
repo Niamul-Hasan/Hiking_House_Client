@@ -1,19 +1,12 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import { FiUpload } from 'react-icons/fi'
 
 const ComboBooking = ({ offer }) => {
-
-    const navigate = useNavigate();
-
     const [user] = useAuthState(auth);
-
-    // if (!user) {
-    //     navigate('/login')
-    // }
 
     const handleBookNow = () => {
         if (user) {
@@ -46,7 +39,7 @@ const ComboBooking = ({ offer }) => {
         <div>
             <Button
                 onClick={handleBookNow}
-            >Book Now</Button>
+            >Book Now <FiUpload /></Button>
         </div>
     );
 };

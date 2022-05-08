@@ -16,8 +16,15 @@ const Banner = () => {
                         style={{ height: '500px' }}
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <div
+                            style={{ backgroundColor: 'rgba(0,0,0,0.5)', borderRadius: '25px' }}>
+                            <h1>A Great House of Collection</h1>
+                            <h2>Every Thing You Need To Explore Hiking Is Provided BY
+                                <br /><span
+                                    style={{ fontSize: '32px', color: 'teal' }}
+                                >HIKING HOUSE</span></h2>
+                            <h3>Book Your Bussiness Gears From This Page Now</h3>
+                        </div>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item interval={1500}>
@@ -27,9 +34,12 @@ const Banner = () => {
                         alt="Second slide"
                         style={{ height: '500px' }}
                     />
-                    <Carousel.Caption className="pb-5 mb-5 text-primary">
-                        <h3>Second slide label</h3>
-                        <p className='fs-3'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque quam rerum consequatur quisquam officia rem similique quia quasi maxime inventore omnis repellendus doloremque ipsa, necessitatibus at! Officiis quo dolorum aperiam consequatur laudantium. Assumenda in veniam quos consectetur sint sit eos.</p>
+                    <Carousel.Caption>
+                        <div style={{ backgroundColor: 'rgba(0,0,0,0.5)', borderRadius: '25px' }}>
+                            <h2>Many Years Of Experienced WareHouse Of Hiking Market</h2>
+                            <h3>Your Trust is Our Main Asset Of Running This Business.Don't Be Shy to Share Your Demand to Us.</h3>
+                        </div>
+
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -40,8 +50,11 @@ const Banner = () => {
                         style={{ height: '500px' }}
                     />
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <div style={{ backgroundColor: 'rgba(0,0,0,0.5)', borderRadius: '25px' }} >
+                            <h2>We Always Maintain Our Customer Setisfiction and Choise. </h2>
+                            <h4>Please Make Sure You Are Booking Your Needs from Here as per Customer Demand</h4>
+                            <h5 className='text-warning'>Booking  can never be returned</h5>
+                        </div>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>

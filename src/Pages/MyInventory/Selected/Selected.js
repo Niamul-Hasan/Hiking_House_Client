@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { Table, Button } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import "./Selected.css";
+import { MdOutlineCancel } from 'react-icons/md';
 
 const Selected = () => {
     const [bookings, setBookings] = useState([]);
@@ -53,7 +54,7 @@ const Selected = () => {
                         <div className='mx-auto'><img src={booking.img} alt="" height={80} style={{ borderRadius: '40%' }} /></div>
                         <div className='mx-auto'><Button
                             onClick={() => handleCancel(booking._id)}
-                            style={{ backgroundColor: 'red', border: 'none' }}>Cancel</Button></div>
+                            style={{ backgroundColor: 'red', border: 'none' }}>Cancel <MdOutlineCancel /></Button></div>
 
                     </div>)
             }

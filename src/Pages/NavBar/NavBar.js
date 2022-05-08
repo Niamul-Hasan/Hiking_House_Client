@@ -15,28 +15,23 @@ const NavBar = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" sticky="top" variant="dark">
             <Container>
-                <Navbar.Brand as={Link} to='/'>HIKING HOUSE</Navbar.Brand>
+                <Navbar.Brand as={Link} to='/'><span
+                    style={{ color: 'teal' }}
+                >HIKING HOUSE</span></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link as={Link} to="/">Bookings</Nav.Link>
-                        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                        </NavDropdown>
+                        <Nav.Link as={Link} to="/">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/blogs">Blogs</Nav.Link>
                     </Nav>
                     <Nav>
                         {user && <Nav.Link as={Link} to="/manageIn">Manage</Nav.Link>}
                         {user && <Nav.Link as={Link} to="/add">Add</Nav.Link>}
-                        {user && <Nav.Link as={Link} to="/selected">Bookings</Nav.Link>}
+                        {user && <Nav.Link as={Link} to="/selected">MyItem</Nav.Link>}
                         {user && <Nav.Link><FaRegUserCircle /><span className='text-success ps-2'>{user.email}
                         </span></Nav.Link>}
                         {user ? <Nav.Link onClick={() => signOut(auth)}>
-                            <span style={{ color: 'maroon', fontWeight: 'bolder' }}>SignOut</span>
+                            <span style={{ color: 'orange', fontWeight: 'bolder' }}>SignOut</span>
                         </Nav.Link>
                             : <Nav.Link as={Link} to="login">
                                 Login

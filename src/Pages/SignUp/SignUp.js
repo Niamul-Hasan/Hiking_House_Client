@@ -81,7 +81,9 @@ const SignUp = () => {
                             <Form.Check onClick={() => setAgree(!agree)} type="checkbox" className={`ps-2 ${agree ? 'text-success' : 'text-danger'}`} label="Agree with Hiking House Terms and Conditions " />
                         </Form.Group>
                         <h3 className='text-danger'>{errorElement}</h3>
-                        <p>Already have an account?<Button variant="link" onClick={() => navigate("/login")}>Please LogIn</Button></p>
+                        <p>Already have an account?<Button variant="link"
+                            className="text-decoration-none text-primary"
+                            onClick={() => navigate("/login")}>Please LogIn</Button></p>
                         <Button disabled={!agree} variant="primary" type="submit">
                             SignUp
                         </Button>

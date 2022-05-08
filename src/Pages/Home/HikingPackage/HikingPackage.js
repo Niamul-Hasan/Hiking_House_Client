@@ -8,7 +8,7 @@ import img4 from '../../../images/Carosel2/newbanner4.png';
 const HikingPackage = () => {
     return (
         <div className='container my-5'>
-            <h2 className='text-center text-primary'>Exclusive Hiking Packages</h2>
+            <h2 className='text-center text-primary'>Explore Hiking Packages</h2>
             <Carousel fade>
                 <Carousel.Item style={{ position: 'relative' }}>
                     <img
@@ -20,8 +20,9 @@ const HikingPackage = () => {
                     <Carousel.Caption style={{ position: 'absolute', top: '0px', right: "0px" }}>
                         <div className='text-end p-5 w-sm-100'
                             style={{ backgroundColor: 'rgba(200,0,100,0.15)', borderRadius: '50px', boxShadow: '-4px 4px 10px 10px rgba(200,0,100,0.25)', color: 'black' }}>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            <h1>Summer HiKing On American Hills</h1>
+                            <h4>Make your comming summer vacation adventurous.</h4>
+                            <h5><small>If interested,email for details.</small> </h5>
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -36,8 +37,10 @@ const HikingPackage = () => {
                     <Carousel.Caption style={{ position: 'absolute', top: '0px', left: "50px" }}>
                         <div className='text-start p-5 w-sm-100'
                             style={{ backgroundColor: 'rgba(200,0,100,0.15)', borderRadius: '50px', boxShadow: '-4px 4px 10px 10px rgba(200,0,100,0.25)', color: 'black' }}>
-                            <h3>Style added</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h2>Feel Lonley At Business? Let's Have A Break</h2>
+                            <h4>Adventure with Beauty Package</h4>
+                            <h5><small>If interested,email for details.</small> </h5>
+
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item >
@@ -52,8 +55,9 @@ const HikingPackage = () => {
                     <Carousel.Caption style={{ position: 'absolute', top: '0px', left: "50px" }}>
                         <div className='text-start p-5 w-sm-100'
                             style={{ backgroundColor: 'rgba(0,100,200,0.15)', borderRadius: '50px', boxShadow: '-4px 4px 10px 10px rgba(0,100,200,0.25)', color: 'white' }}>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h2>Adventure With Friends and Family</h2>
+                            <h4>Make your Vacation Memorable with Family And Friends</h4>
+                            <h5><small>Email for details.</small> </h5>
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>
@@ -68,8 +72,9 @@ const HikingPackage = () => {
                     <Carousel.Caption style={{ position: 'absolute', top: '0px', right: "0px" }}>
                         <div className='text-end p-5 w-sm-100'
                             style={{ backgroundColor: 'rgba(10,10,10,0.15)', borderRadius: '50px', boxShadow: '-4px 4px 10px 10px rgba(10,10,10,0.25)', color: 'white' }}>
-                            <h3>Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            <h2>Adventure With Privacy</h2>
+                            <h4>Full Privacy Provided Awesome Hiking and Camapin Package. </h4>
+                            <h5><small>Email for advance booking.</small> </h5>
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>

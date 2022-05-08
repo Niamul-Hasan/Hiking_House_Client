@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import AddItems from './Pages/AddItem/AddItems';
+import Blogs from './Pages/Blogs/Blogs';
 import HikingFooter from './Pages/Footer/HikingFooter';
 import Gears from './Pages/Home/Gears/Gears';
 import Home from './Pages/Home/Home';
@@ -34,6 +35,7 @@ function App() {
         <Route path='/myInventory/:id' element={<PrivateRoute>
           <MyInventory /></PrivateRoute>}></Route>
         <Route path="/inventory" element={<Gears />}></Route>
+        <Route path="/blogs" element={<Blogs />}></Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
       <HikingFooter></HikingFooter>

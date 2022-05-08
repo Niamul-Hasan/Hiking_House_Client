@@ -13,7 +13,7 @@ const Combo = () => {
 
     return (
         <div className='container my-4'>
-            <h2 className='text-center text-warning'>Limited Offer</h2>
+            <h2 className='text-center text-success'>Limited Combo Offer</h2>
             <div className='container row'>
                 {
                     offers.map(offer => <div className='container col-lg-4 col-sm-1 col-md-2' key={offer._id}>
