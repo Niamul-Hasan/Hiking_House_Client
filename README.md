@@ -6,7 +6,12 @@ Click to view <https://github.com/ProgrammingHeroWC4/warehouse-management-client
 ## [private repo link for server](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Niamul-Hasan)
 Click to View <https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Niamul-Hasan>
 
-## [Live Firebase deploy link]
+
+# [Live Firebase deploy link](https://hiking-house.web.app)
+Click to visit <https://hiking-house.web.app>
+
+### [Heroku hosting link](https://serene-coast-39945.herokuapp.com)
+<https://serene-coast-39945.herokuapp.com>
 
 ## [Stack overflow Question link](https://stackoverflow.com/questions/72079758/why-does-mongodb-server-bad-auth-authentication-failed-occured)
 <https://stackoverflow.com/questions/72079758/why-does-mongodb-server-bad-auth-authentication-failed-occured>
