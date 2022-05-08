@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -21,12 +22,13 @@ const Login = () => {
 
 
 
-    const handleSignIn = (event) => {
+    const handleSignIn = async (event) => {
         event.preventDefault();
         const email = RefEmail.current.value;
         const password = event.target.password.value;
-        // console.log(email, password);
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+        const { data } = await axios.post(" https://serene-coast-39945.herokuapp.com/token", { email });
+        localStorage.setItem('accessToken', data.accessToken);
         event.target.reset();
     }
     const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);

@@ -1,4 +1,30 @@
-# Getting Started with Create React App
+# Project Name `HIKING HOUSE`
+
+## [private repo link for Client](https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Niamul-Hasan)
+Click to view <https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Niamul-Hasan>
+
+## [private repo link for server](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Niamul-Hasan)
+Click to View <https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Niamul-Hasan>
+
+## [Live Firebase deploy link]
+
+## [Stack overflow Question link](https://stackoverflow.com/questions/72079758/why-does-mongodb-server-bad-auth-authentication-failed-occured)
+<https://stackoverflow.com/questions/72079758/why-does-mongodb-server-bad-auth-authentication-failed-occured>
+
+## Some Features of My Project
+- Firebase is Used
+- Mongodb is used
+- Heroku Deploy is used for server site
+- full responsive
+- React js is used
+
+
+
+
+
+
+
+<!-- # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -67,4 +93,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->
