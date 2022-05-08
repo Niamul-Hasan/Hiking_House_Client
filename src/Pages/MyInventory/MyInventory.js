@@ -63,11 +63,11 @@ const MyInventory = () => {
                         </Form.Group>
                         <Form.Group className="mb-2" controlId="formBasicText">
                             <Form.Label>Inventory Name</Form.Label>
-                            <Form.Control type="text" name="name" value={inventory.name} readOnly required />
+                            <Form.Control type="text" name="name" value={inventory?.name} readOnly required />
                         </Form.Group>
                         <Form.Group className="mb-2" controlId="formBasicText">
                             <Form.Label>Suplier Name</Form.Label>
-                            <Form.Control type="text" name="suplier" value={inventory.suplier} readOnly required />
+                            <Form.Control type="text" name="suplier" value={inventory?.suplier} readOnly required />
                         </Form.Group>
                         <Form.Group className="mb-2" controlId="formBasicNumber">
                             <Form.Label>Phone Number</Form.Label>
