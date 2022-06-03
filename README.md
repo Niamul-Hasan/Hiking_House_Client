@@ -22,6 +22,7 @@ Click to visit <https://hiking-house.web.app>
 - Heroku Deploy is used for server site
 - full responsive
 - React js is used
+- NodeJs is used for back end
 
 
 
