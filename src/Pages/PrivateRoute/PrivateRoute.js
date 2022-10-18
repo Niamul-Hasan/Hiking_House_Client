@@ -23,7 +23,7 @@ const PrivateRoute = ({ children }) => {
                 style={{ backgroundColor: 'tomato', border: 'none', borderRadius: "15px", fontWeight: '500', marginTop: '10px' }}
                 onClick={async () => {
                     await sendEmailVerification();
-                    toast('Sent email');
+                    toast('Email is Sent');
                 }}
             >
                 Send Verification Email Again
