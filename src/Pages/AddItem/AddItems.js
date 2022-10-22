@@ -60,6 +60,10 @@ const AddItems = () => {
                             <Form.Label>Quantity</Form.Label>
                             <Form.Control type="Number" name="quantity" required />
                         </Form.Group>
+                        <Form.Group className="mb-2" controlId="formBasicFile">
+                            <Form.Label>PHOTO</Form.Label>
+                            <Form.Control type="File" name="photo" required />
+                        </Form.Group>
                         <Button variant="success" type="submit">
                             ADD
                         </Button>
