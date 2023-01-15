@@ -14,7 +14,7 @@ const AddItems = () => {
         const newInventory = { name, img, description, price, quantity, suplier };
         console.log(newInventory);
 
-        const url = "https://serene-coast-39945.herokuapp.com/gears";
+        const url = "https://hiking-house-server.vercel.app/gears";
         fetch(url, {
             method: "POST",
             headers: {

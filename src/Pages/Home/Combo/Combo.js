@@ -4,7 +4,7 @@ import ComboBooking from './ComboBooking';
 const Combo = () => {
     const [offers, setOffers] = useState([]);
     useEffect(() => {
-        const url = 'https://serene-coast-39945.herokuapp.com/combo';
+        const url = 'https://hiking-house-server.vercel.app/combo';
         fetch(url)
             .then(res => res.json())
             .then(data => setOffers(data));

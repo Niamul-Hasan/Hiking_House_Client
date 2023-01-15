@@ -27,7 +27,7 @@ const Login = () => {
         const email = RefEmail.current.value;
         const password = event.target.password.value;
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post(" https://serene-coast-39945.herokuapp.com/token", { email });
+        const { data } = await axios.post(" https://hiking-house-server.vercel.app/token", { email });
         localStorage.setItem('accessToken', data.accessToken);
         event.target.reset();
     }

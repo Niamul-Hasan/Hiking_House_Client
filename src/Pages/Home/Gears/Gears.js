@@ -10,7 +10,7 @@ const Gears = () => {
     const [inventories, setInventories] = useState([]);
 
     useEffect(() => {
-        const url = 'https://serene-coast-39945.herokuapp.com/gears';
+        const url = 'https://hiking-house-server.vercel.app/gears';
         fetch(url)
             .then(res => res.json())
             .then(data => setInventories(data))

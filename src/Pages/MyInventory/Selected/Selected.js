@@ -10,7 +10,7 @@ const Selected = () => {
     const [user] = useAuthState(auth)
     useEffect(() => {
         const email = user.email;
-        const url = `https://serene-coast-39945.herokuapp.com/bookings?email=${email}`
+        const url = `https://hiking-house-server.vercel.app/bookings?email=${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => {
@@ -22,7 +22,7 @@ const Selected = () => {
     const handleCancel = (id) => {
         const confirm = window.confirm('Are You Sure to Delete This item');
         if (confirm) {
-            const url = `https://serene-coast-39945.herokuapp.com/bookings/${id}`;
+            const url = `https://hiking-house-server.vercel.app/bookings/${id}`;
             fetch(url, {
                 method: 'DELETE',
                 headers: {

@@ -24,7 +24,7 @@ const MyInventory = () => {
             quantity: event.target.quantity.value
 
         }
-        fetch("https://serene-coast-39945.herokuapp.com/bookings", {
+        fetch("https://hiking-house-server.vercel.app/bookings", {
             method: "POST",
             headers: {
                 'Content-Type': 'application/json'
